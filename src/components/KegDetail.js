@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 function KegDetail(props){
-  const {keg, onPourPint} = props;
+  const {keg, onPourPint, onKegRefill, onKegDelete} = props;
   let KegStyles = {};
   let VisibleState = null;
 
@@ -19,7 +20,10 @@ function KegDetail(props){
     <h2>{keg.name}</h2>
     <h4>{keg.brand}<span style={{color: '#B2BBB6'}}>   ~~~   <em>{keg.alcoholContent}</em></span></h4>
     <hr />
-    <p>{keg.description}<span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em style={{color: 'red'}}>Pints Left: EMPTY</em></span></p>
+    <p>{keg.description}</p><span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em style={{color: 'red'}}>Pints Left: EMPTY</em></span>
+    <br />
+    <button onClick={() => onKegDelete(keg.id)}>Remove Keg</button>
+    <button onClick={() => onKegRefill(keg.id)}>Pop a fresh Keg</button>
 </div>
   } else{
     VisibleState = 
@@ -27,9 +31,11 @@ function KegDetail(props){
     <h2>{keg.name}</h2>
     <h4>{keg.brand}<span style={{color: '#B2BBB6'}}>   ~~~   <em>{keg.alcoholContent}</em></span></h4>
     <hr />
-    <p>{keg.description}<span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em>Pints Left:{keg.pintsLeft}</em></span></p>
+    <p>{keg.description}</p><span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em>Pints Left:{keg.pintsLeft}</em></span>
     <br />
     <button onClick={() => onPourPint(keg.id)}>Pour a glass</button>
+    <button onClick={() => onKegDelete(keg.id)}>Remove Keg</button>
+    <button onClick={() => onKegRefill(keg.id)}>Pop a fresh Keg</button>
 </div>
   }
   return(
@@ -37,6 +43,13 @@ function KegDetail(props){
       {VisibleState}
     </React.Fragment>
   );
+}
+
+KegDetail.propTypes = {
+  keg: PropTypes.object,
+  onPourPint: PropTypes.func,
+  onKegRefill: PropTypes.func,
+  onKegDelete: PropTypes.func
 }
 
 export default KegDetail;

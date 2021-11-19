@@ -47,6 +47,17 @@ class KegControl extends React.Component{
     this.setState({mainKegList: newMainKegList});
   }
 
+  handleKegRefill = (id) => {
+    const selectKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+    selectKeg.pintsLeft = 124;
+    const newMainKegList = this.state.mainKegList.map((keg => {return keg.id === id ? selectKeg : keg}));
+    this.setState({mainKegList: newMainKegList});
+  }
+  handleDeleteKeg = (id) => {
+    const newMainKegList = this.state.mainKegList.filter(keg => keg.id !== id);
+    this.setState({mainKegList: newMainKegList, selectedKeg: null});
+  }
+
   render(){
     let currentVisibleState =null;
     let buttonText = null;
@@ -115,6 +126,8 @@ class KegControl extends React.Component{
       currentVisibleState = <KegDetail 
       keg={this.state.selectedKeg}
       onPourPint = {this.handlePourPint}
+      onKegRefill={this.handleKegRefill}
+      onKegDelete={this.handleDeleteKeg}
       />
       buttonText = "Keg List"
     } else if (this.state.formVisible){
