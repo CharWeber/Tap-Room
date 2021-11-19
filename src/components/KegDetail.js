@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 function KegDetail(props){
-  const {keg, onPourPint, onKegRefill, onKegDelete} = props;
+  const {keg, onPourPint, onKegRefill, onKegDelete, onKegEdit} = props;
   let KegStyles = {};
   let KegStatus = null;
   
@@ -19,7 +19,14 @@ function KegDetail(props){
     <div>
       <span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em style={{textAlign: 'right', color: '#FF0000', backgroundColor: 'black'}}>Pints Left: EMPTY</em></span>
     </div>
-  } else{
+  }else if (keg.pintsLeft <=10 ){
+    KegStatus =
+    <div>
+      <span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em style={{textAlign: 'right', color: '#FF0000', backgroundColor: 'yellow'}}>Pints Left: {keg.pintsLeft} Almost out!</em></span>
+      <br />
+      <button onClick={() => onPourPint(keg.id)}>Pour a glass</button>
+    </div>
+  } else {
     KegStatus = 
     <div>
       <span style={{textAlign: 'right', color: '#B2BBB6'}}>    <em>Pints Left:{keg.pintsLeft}</em></span>
@@ -30,54 +37,60 @@ function KegDetail(props){
 
   if (keg.brand === 'Champagne Barrels' ){
     KegStyles = {
-      margin: '10px',
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
+      color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#FFC8F9'
+      backgroundColor: '#E601EE',
+      backdropFilter: 'blur',
+      opacity: '.9'
     }
   } else if (keg.brand === "Charlie's Cola Cart ©©©"){
     KegStyles = {
-      margin: '10px',
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
+      color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#C70039'
+      backgroundColor: '#C70039',
+      opacity: '.9'
     }
   } else if (keg.brand === "Forest Jailbreak"){
     KegStyles = {
-      margin: '10px',
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
+      color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#8EB785'
+      backgroundColor: '#0B5A00',
+      opacity: '.9'
     }
   } else if (keg.brand === "ALL GAS FULL OUT"){
     KegStyles = {
-      margin: '10px',
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
+      color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#900C3F'
+      backgroundColor: '#900C3F',
+      opacity: '.9'
     }
   } else{
     KegStyles = {
-      margin: '10px',
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
+      color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#DAF7A6'
+      backgroundColor: '#DAF7A6',
+      opacity: '.9'
     }
   }
 
   return(
     <React.Fragment>
-      <div style={KegStyles}>
+      <div class='keg' style={KegStyles}>
         <h2>{keg.name}</h2>
         <h4>{keg.brand}<span style={{color: '#B2BBB6'}}>   ~~~   <em>{keg.alcoholContent}</em></span></h4>
         <hr />
@@ -85,6 +98,7 @@ function KegDetail(props){
         {KegStatus}
         <button onClick={() => onKegDelete(keg.id)}>Remove Keg</button>
         <button onClick={() => onKegRefill(keg.id)}>Pop a fresh Keg</button>
+        <button onClick={() => onKegEdit(keg.id)}>Edit Keg</button>
       </div> 
     </React.Fragment>
   );
@@ -94,7 +108,8 @@ KegDetail.propTypes = {
   keg: PropTypes.object,
   onPourPint: PropTypes.func,
   onKegRefill: PropTypes.func,
-  onKegDelete: PropTypes.func
+  onKegDelete: PropTypes.func,
+  onKegEdit: PropTypes.func
 }
 
 export default KegDetail;

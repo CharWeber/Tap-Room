@@ -14,48 +14,48 @@ function Keg(props){
   }
   if (props.brand === 'Champagne Barrels' ){
     KegStyles = {
-      
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#FFC8F9'
+      backgroundColor: '#430071',
+      opacity: '.9'
     }
   } else if (props.brand === "Charlie's Cola Cart ©©©"){
     KegStyles = {
-      
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#C70039'
+      backgroundColor: '#C70039',
+      opacity: '.9'
     }
   } else if (props.brand === "Forest Jailbreak"){
     KegStyles = {
-      
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#8EB785'
+      backgroundColor: '#0B5A00',
+      opacity: '.9'
     }
   } else if (props.brand === "ALL GAS FULL OUT"){
     KegStyles = {
-      
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#900C3F'
+      backgroundColor: '#900C3F',
+      opacity: '.9'
     }
   } else{
     KegStyles = {
-      
+      margin: 'auto',
       padding: '5px',
-      fontFamily: 'sans-serif',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#DAF7A6'
+      backgroundColor: '#DAF7A6',
+      opacity: '.9'
     }
   }
 
@@ -65,6 +65,12 @@ function Keg(props){
       <p>{props.description}</p><span style={{textAlign: 'right', color: '#FF0000', backgroundColor: 'black'}}>
       <em>Pints Left: EMPTY</em></span>
     </div>
+  }else if (props.pintsLeft <=10){
+    KegStatus =  
+    <div>
+      <p>{props.description}</p><span style={{textAlign: 'right', color: '#FF0000', backgroundColor: 'yellow'}}>
+      <em>Pints Left: {props.pintsLeft} Almost out!</em></span>
+    </div>
   } else {
     KegStatus =  
     <div>
@@ -72,9 +78,10 @@ function Keg(props){
       <em>Pints Left:{props.pintsLeft}</em></span>
     </div>
   }
+
   return(
     <React.Fragment>
-      <div onClick={() => props.onKegClicked(props.id)} style={KegStyles}>
+      <div class="content-card keg" onClick={() => props.onKegClicked(props.id)} style={KegStyles}>
         <h2>{props.name}</h2>
         <h4>{props.brand}<span style={{color: '#B2BBB6'}}>   ~~~   <em>{props.alcoholContent}</em></span></h4>
         <hr />

@@ -2,6 +2,7 @@ import React from "react";
 import KegList from "./KegList";
 import NewKeg from "./NewKeg";
 import KegDetail from "./KegDetail";
+import KegEdit from "./KegEdit";
 
 class KegControl extends React.Component{
 
@@ -12,7 +13,12 @@ class KegControl extends React.Component{
       formVisible: false,
       selectedKeg: null,
       dataLoaded: false,
+      editing: false,
     }
+  }
+
+  handleEdit = ()=>{
+    this.setState({editing: true})
   }
 
   handleClick = () => {
@@ -56,6 +62,16 @@ class KegControl extends React.Component{
   handleDeleteKeg = (id) => {
     const newMainKegList = this.state.mainKegList.filter(keg => keg.id !== id);
     this.setState({mainKegList: newMainKegList, selectedKeg: null});
+  }
+
+  handleEditKeg = (KegToEdit) => {
+    const editedKegs = this.state.mainKegList
+      .map((keg => {return keg.id === KegToEdit.id ? KegToEdit : keg}));
+    this.setState({
+      mainKegList: editedKegs,
+      editing: false,
+      selectedKeg: null
+    });
   }
 
   render(){
@@ -122,12 +138,18 @@ class KegControl extends React.Component{
       dataLoaded: true
     })
     }
-    if (this.state.selectedKeg != null){
+    if (this.state.editing){
+      currentVisibleState = <KegEdit
+      keg={this.state.selectedKeg}
+      onKegEdit={this.handleEditKeg}
+      />
+    }else if (this.state.selectedKeg != null){
       currentVisibleState = <KegDetail 
       keg={this.state.selectedKeg}
       onPourPint = {this.handlePourPint}
       onKegRefill={this.handleKegRefill}
       onKegDelete={this.handleDeleteKeg}
+      onKegEdit={this.handleEdit}
       />
       buttonText = "Keg List"
     } else if (this.state.formVisible){
@@ -135,16 +157,22 @@ class KegControl extends React.Component{
       buttonText = 'Keg List';
     }
     else{
-      currentVisibleState =  <KegList 
-      mainKegList={this.state.mainKegList}
-      onKegSelection={this.handleChangeKegSelection}
-      />
+      currentVisibleState =  
+      <div class="content-grid">
+        <KegList
+        mainKegList={this.state.mainKegList}
+        onKegSelection={this.handleChangeKegSelection}
+        />
+      </div>
       buttonText = 'Add Keg'
     }
 
     return(
       <React.Fragment>
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <div style={{textAlign: 'center'}}>
+          <h3 style={{color: 'white'}}>Menu</h3>
+          <button onClick={this.handleClick}>{buttonText}</button>
+        </div>
         {currentVisibleState}
       </React.Fragment>
     )

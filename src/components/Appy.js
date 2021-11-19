@@ -2,11 +2,13 @@ import React from "react";
 import Header from "./Header";
 import KegControl from "./KegControl";
 
+
 function App() {
 
   let Styles = {
     margin: 'auto',
     width: '90vw',
+    textAlign: 'center',
   }
   return (
     <React.Fragment>
