@@ -14,8 +14,8 @@ function Header(){
   }
 return(
 <div class='keg' style={Styles}>  
-    <h1>Hot Take Tap House</h1>
-    <p><strong>IPAs are BAD and people lie about liking them</strong></p>
+    <h1 style={{backgroundColor: 'black'}}>Hot Take Tap House</h1>
+    <p><strong style={{color: '#FF0000', backgroundColor: 'black'}}>IPAs are BAD and people lie about liking them</strong></p>
 </div>
 );
 }

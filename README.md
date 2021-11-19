@@ -1,3 +1,53 @@
+# Hot take Tap house
+
+A mock taphouse website for displaying available drinks
+
+### by Charlie Weber
+
+## Technologies Used
+
+* React
+* Javascript
+* HTML
+* JSX
+* CSS
+* Node.js/Webpack
+
+
+## Description
+This web application will allow users to add/edit/delete/view kegs to list of available drinks. they can also pour a cup and 'refill' kegs to keep track of how many pints are left in a keg.
+
+
+### Technology Requirements
+
+* [React](https://reactjs.org/docs/getting-started.html)
+* A text editor like [VS Code](https://code.visualstudio.com/)
+
+## Setup/Installation Requirements
+
+* Clone project or download project into desired directory
+
+        $ git clone https://github.com/CharWeber/Tap-Room
+
+* run this command to get into project directory
+
+      $ cd Tap-Room
+
+* run project using this command
+
+      $ npm run start
+
+
+## Known Bugs
+
+* _NA_
+
+## License
+_[GPL](https://opensource.org/licenses/gpl-license)_
+
+## Contact Information
+
+charlesweber@gmail.com
 
 
 
