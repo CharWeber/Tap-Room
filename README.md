@@ -17,6 +17,9 @@ A mock taphouse website for displaying available drinks
 ## Description
 This web application will allow users to add/edit/delete/view kegs to list of available drinks. they can also pour a cup and 'refill' kegs to keep track of how many pints are left in a keg.
 
+## hosted site
+
+https://charweber.github.io/Tap-Room/
 
 ### Technology Requirements
 
