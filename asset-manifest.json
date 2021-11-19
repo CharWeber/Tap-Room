@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Tap-Room/static/css/main.c205a827.chunk.css",
+    "main.js": "/Tap-Room/static/js/main.119d854f.chunk.js",
+    "main.js.map": "/Tap-Room/static/js/main.119d854f.chunk.js.map",
+    "runtime-main.js": "/Tap-Room/static/js/runtime-main.903a0310.js",
+    "runtime-main.js.map": "/Tap-Room/static/js/runtime-main.903a0310.js.map",
+    "static/js/2.99fb60df.chunk.js": "/Tap-Room/static/js/2.99fb60df.chunk.js",
+    "static/js/2.99fb60df.chunk.js.map": "/Tap-Room/static/js/2.99fb60df.chunk.js.map",
+    "static/js/3.3270ef3c.chunk.js": "/Tap-Room/static/js/3.3270ef3c.chunk.js",
+    "static/js/3.3270ef3c.chunk.js.map": "/Tap-Room/static/js/3.3270ef3c.chunk.js.map",
+    "index.html": "/Tap-Room/index.html",
+    "precache-manifest.e6723c1a19e3628a70aa3c5534bcdb4d.js": "/Tap-Room/precache-manifest.e6723c1a19e3628a70aa3c5534bcdb4d.js",
+    "service-worker.js": "/Tap-Room/service-worker.js",
+    "static/css/main.c205a827.chunk.css.map": "/Tap-Room/static/css/main.c205a827.chunk.css.map",
+    "static/media/index.css": "/Tap-Room/static/media/mainBG.45668efe.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.903a0310.js",
+    "static/js/2.99fb60df.chunk.js",
+    "static/css/main.c205a827.chunk.css",
+    "static/js/main.119d854f.chunk.js"
+  ]
+}
