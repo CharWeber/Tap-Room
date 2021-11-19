@@ -54,7 +54,7 @@ function Keg(props){
       padding: '5px',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#DAF7A6',
+      backgroundColor: '#040094',
       opacity: '.9'
     }
   }

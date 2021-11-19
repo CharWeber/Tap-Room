@@ -83,7 +83,7 @@ function KegDetail(props){
       color: 'white',
       border: '5px solid black',
       width: '80vw',
-      backgroundColor: '#DAF7A6',
+      backgroundColor: '#D040094',
       opacity: '.9'
     }
   }
