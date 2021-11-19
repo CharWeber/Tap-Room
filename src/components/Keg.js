@@ -13,7 +13,7 @@ function Keg(props){
   }
   return(
     <React.Fragment>
-      <div style={KegStyles}>
+      <div onClick={() => props.onKegClicked(props.id)} style={KegStyles}>
         <h2>{props.name}</h2>
         <h4>{props.brand}<span style={{color: '#B2BBB6'}}>   ~~~   <em>{props.alcoholContent}</em></span></h4>
         <hr />
@@ -31,7 +31,8 @@ Keg.propTypes ={
   description: PropTypes.string,
   pintsLeft: PropTypes.number,
   id: PropTypes.string,
-  key: PropTypes.string
+  key: PropTypes.string,
+  onKegClicked: PropTypes.func
 }
 
 export default Keg;

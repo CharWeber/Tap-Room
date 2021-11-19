@@ -1,6 +1,7 @@
 import React from "react";
 import KegList from "./KegList";
 import NewKeg from "./NewKeg";
+import KegDetail from "./KegDetail";
 
 class KegControl extends React.Component{
 
@@ -32,6 +33,18 @@ class KegControl extends React.Component{
       mainKegList: newMainKegList,
       formVisible: false
     })
+  }
+
+  handleChangeKegSelection = (id) => {
+    const Keg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+    this.setState({selectedKeg: Keg});
+  }
+
+  handlePourPint = (id) => {
+    const selectKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+    selectKeg.pintsLeft -= 1;
+    const newMainKegList = this.state.mainKegList.map((keg => {return keg.id === id ? selectKeg : keg}));
+    this.setState({mainKegList: newMainKegList});
   }
 
   render(){
@@ -98,13 +111,21 @@ class KegControl extends React.Component{
       dataLoaded: true
     })
     }
-
-    if (this.state.formVisible){
+    if (this.state.selectedKeg != null){
+      currentVisibleState = <KegDetail 
+      keg={this.state.selectedKeg}
+      onPourPint = {this.handlePourPint}
+      />
+      buttonText = "Keg List"
+    } else if (this.state.formVisible){
       currentVisibleState = <NewKeg onNewKeg={this.handleNewKegForm} buttonText="Submit"/>
       buttonText = 'Keg List';
     }
     else{
-      currentVisibleState =  <KegList mainKegList={this.state.mainKegList}/>
+      currentVisibleState =  <KegList 
+      mainKegList={this.state.mainKegList}
+      onKegSelection={this.handleChangeKegSelection}
+      />
       buttonText = 'Add Keg'
     }
 
