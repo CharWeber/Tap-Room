@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Tap-Room/static/css/main.c205a827.chunk.css",
-    "main.js": "/Tap-Room/static/js/main.c441dc42.chunk.js",
-    "main.js.map": "/Tap-Room/static/js/main.c441dc42.chunk.js.map",
+    "main.js": "/Tap-Room/static/js/main.ac6e4bf6.chunk.js",
+    "main.js.map": "/Tap-Room/static/js/main.ac6e4bf6.chunk.js.map",
     "runtime-main.js": "/Tap-Room/static/js/runtime-main.903a0310.js",
     "runtime-main.js.map": "/Tap-Room/static/js/runtime-main.903a0310.js.map",
     "static/js/2.99fb60df.chunk.js": "/Tap-Room/static/js/2.99fb60df.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.3270ef3c.chunk.js": "/Tap-Room/static/js/3.3270ef3c.chunk.js",
     "static/js/3.3270ef3c.chunk.js.map": "/Tap-Room/static/js/3.3270ef3c.chunk.js.map",
     "index.html": "/Tap-Room/index.html",
-    "precache-manifest.ff86b723f8e08ffb4bd5d02340039c20.js": "/Tap-Room/precache-manifest.ff86b723f8e08ffb4bd5d02340039c20.js",
+    "precache-manifest.09332c470d8ba6df161baf38f61d5f4c.js": "/Tap-Room/precache-manifest.09332c470d8ba6df161baf38f61d5f4c.js",
     "service-worker.js": "/Tap-Room/service-worker.js",
     "static/css/main.c205a827.chunk.css.map": "/Tap-Room/static/css/main.c205a827.chunk.css.map",
     "static/media/index.css": "/Tap-Room/static/media/mainBG.45668efe.jpg"
@@ -19,6 +19,6 @@
     "static/js/runtime-main.903a0310.js",
     "static/js/2.99fb60df.chunk.js",
     "static/css/main.c205a827.chunk.css",
-    "static/js/main.c441dc42.chunk.js"
+    "static/js/main.ac6e4bf6.chunk.js"
   ]
 }
