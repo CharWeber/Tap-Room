@@ -2,6 +2,8 @@
 
 A mock taphouse website for displaying available drinks
 
+![alt text](./diagram.png)
+
 ### by Charlie Weber
 
 ## Technologies Used
